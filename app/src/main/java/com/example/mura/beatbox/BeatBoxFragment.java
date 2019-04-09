@@ -27,6 +27,8 @@ public class BeatBoxFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        //удерживание фрагмента
+        setRetainInstance(true);
 
         mBeatBox = new BeatBox(getActivity());
     }
@@ -85,5 +87,11 @@ public class BeatBoxFragment extends Fragment {
         public int getItemCount() {
             return  mSounds.size();
         }
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        mBeatBox.realese();
     }
 }

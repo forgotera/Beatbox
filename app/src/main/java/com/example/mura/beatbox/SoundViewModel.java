@@ -24,4 +24,8 @@ public class SoundViewModel extends BaseObservable {
     public String getTilte(){
         return mSound.getmName();
     }
+
+    public void onButtonClicked() {
+        mBeatBox.play(mSound);
+    }
 }
